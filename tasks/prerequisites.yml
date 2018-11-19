@@ -1,3 +1,6 @@
+- name: install aptitude
+  command: apt-get install aptitude
+
 - name: update the apt package index i.e. apt-get update
   apt: update_cache=yes
 
@@ -11,6 +14,7 @@
   with_items:
     - build-essential
     - nodejs
+    - npm
     - qemu-kvm
     - libvirt-bin
     - ubuntu-vm-builder
