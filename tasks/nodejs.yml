@@ -1,0 +1,8 @@
+- name: Node.js - Install ionic and cordova globally
+  npm: 
+    name: "{{ item }}" 
+    state: present
+    global: yes
+  with_items:
+    - ionic
+    - cordova

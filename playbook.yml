@@ -1,0 +1,21 @@
+---
+
+- name: set up the cummins-falls-app development environment
+  hosts: localhost
+  become: yes
+  become_method: sudo
+  vars:
+    var_node: /tmp
+    user: awest
+
+  tasks:
+    - name: include geerlingguy.java
+      include_role:
+        name: geerlingguy.java
+      java_packages:
+        - openjdk-8-jdk
+
+    - include: tasks/prerequisites.yml
+    - include: tasks/nodejs.yml
+    - include: tasks/dev.yml
+    - include: tasks/android.yml

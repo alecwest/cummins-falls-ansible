@@ -1,0 +1,12 @@
+- name: Install Android Studio via snap
+  command: snap install android-studio
+
+- name: Set ANDROID_HOME environment variable
+  copy:
+    dest: /etc/profile.d/android_home.sh
+    content: 'ANDROID_HOME=$HOME/Android/Sdk'
+
+- name: Add Android bin folders to PATH
+  copy:
+    dest: /etc/profile.d/android_bins.sh
+    content: 'PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools'
