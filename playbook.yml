@@ -12,8 +12,8 @@
     - name: include geerlingguy.java
       include_role:
         name: geerlingguy.java
-      java_packages:
-        - openjdk-8-jdk
+      vars:
+        java_packages: openjdk-8-jdk
 
     - include: tasks/prerequisites.yml
     - include: tasks/nodejs.yml
