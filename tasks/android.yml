@@ -1,5 +1,5 @@
 - name: Install Android Studio via snap
-  command: snap install android-studio
+  command: snap install android-studio --classic
 
 - name: Set ANDROID_HOME environment variable
   copy:
